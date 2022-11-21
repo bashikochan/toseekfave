@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   belongs_to :favemember
+  has_many :collections
 
   validates :nickname, presence: true
   validates :profile, presence: true
