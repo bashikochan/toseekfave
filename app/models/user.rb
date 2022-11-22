@@ -10,8 +10,9 @@ class User < ApplicationRecord
   belongs_to :favemember
 
   validates :nickname, presence: true
+  validates :chemistry, presence: true
   validates :profile, presence: true
   # ジャンル選択が「ーーー」の時は保存できないようにする
   validates :favemember_id, numericality: { other_than: 1, message: "can't be blank" }
-
+  
 end
