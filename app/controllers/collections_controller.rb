@@ -22,6 +22,13 @@ class CollectionsController < ApplicationController
     @user = @collection.user
   end
 
+  def edit
+    @collection = Collection.find(params[:id])
+    unless @collection.user.id == current_user.id
+      redirect_to action: :index
+    end
+  end
+
   private
 
   def collection_params
