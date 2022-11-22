@@ -1,14 +1,24 @@
 <div class="card">
-  <%= link_to image_tag(collection.image, class: :card__img), collections_path(collection.id) %>
-  <br>
-  <%= f.collection_select(:favemember_id, Favemember.all, :id, :name, {}, {class:"select-box", id:"favemember"}) %>
-  <br>
-  <%= f.collection_select(:album_id, Album.all, :id, :name, {}, {class:"select-box", id:"album"}) %>
-  <div class="card__body">
-    <%= link_to "#{prototype.title}", prototype_path(prototype.id), class: :card__title %>
-    <p class="card__summary">
-      <%= "#{prototype.catch_copy}" %>
-    </p>
-    <%= link_to "by #{prototype.user.name}", "/users/#{prototype.user.id}", class: :card__user %>
-  </div>
+  <tbody>
+    <%= link_to image_tag(collection.image, class: :card__img), collections_path(collection.id) %>   
+    <br>
+    <table class="table_card"> 
+    <tr>
+      <th class="card__col1">メンバー</th>
+      <td class="card__col2"><%= collection.favemember.name %></td>
+    </tr>
+    <tr>
+      <th class="card__col1">アルバム名</th>
+      <td class="card__col2"><%= collection.album.name %></td>
+    </tr>
+    <tr>
+      <th class="card__col1">店舗</th>
+      <td class="card__col2"><%= collection.version.name %></td>
+    </tr>
+    <tr>
+      <th class="card__col1">その他</th>
+      <td class="card__col2"><%= collection.others %></td>
+    </tr>
+    </table>
+  </tbody>
 </div>
