@@ -21,7 +21,7 @@ class Version < ActiveHash::Base
     { id: 18, name: 'lotte' },
     { id: 19, name: 'shopee' },
     { id: 20, name: 'タワレコ' },
-    { id: 21, name: 'ソニミュ' }
+    { id: 21, name: 'ソニミュ' },
     { id: 22, name: 'その他' }
   ]
 
