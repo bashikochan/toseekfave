@@ -29,6 +29,21 @@ class CollectionsController < ApplicationController
     end
   end
 
+  def update
+    collection = Collection.find(params[:id])
+    if collection.update(collection_params)
+      redirect_to action: :show
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    collection = Collection.find(params[:id])
+    collection.destroy
+    redirect_to root_path
+  end
+
   private
 
   def collection_params

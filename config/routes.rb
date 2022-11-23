@@ -3,6 +3,6 @@ Rails.application.routes.draw do
 
   root to: 'collections#index'
 
-  resources :collections, only: [:index, :new, :create, :show, :edit]
+  resources :collections
   resources :users, only: [:show]
 end
