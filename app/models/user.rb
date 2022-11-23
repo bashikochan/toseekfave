@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
+  has_many :collections
+  has_many :trades
   belongs_to :favemember
 
   validates :nickname, presence: true
